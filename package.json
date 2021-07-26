@@ -5,10 +5,9 @@
   "description": "Discord.js antiraidbot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "Tomato#6966",
+  "author": "Ethernet#3621",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1"
