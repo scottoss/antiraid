@@ -8,5 +8,12 @@
   },
   "author": "Ethernet#3621",
   "license": "ISC"
-  "dependencies": {"discord.js": "*"}
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs-extra": "^9.1.0"
+  },
+  "devDependencies": {
+    "ascii-table": "0.0.9",
+    "colors": "^1.4.0"
+  }
 }
