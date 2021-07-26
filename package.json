@@ -8,7 +8,5 @@
   },
   "author": "",
   "license": "ISC"
-  "dependencies": {
-    "discord.js": "*"
-  }
+  "dependencies": {"discord.js": "*"}
 }
