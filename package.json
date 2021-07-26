@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Ethernet#3621",
+  "author": "DerpysTown#1416",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1"
