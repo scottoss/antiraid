@@ -32,7 +32,7 @@ fs.readdir("./commands/", (err, files) => {
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.cache.size} servers!`);
 
-  client.user.setActivity('over unverified bots!!', {type: "WATCHING"});
+  client.user.setActivity('over unverified bots!! | r!help', {type: "WATCHING"});
 });
 
 //Command Manager
