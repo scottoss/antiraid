@@ -57,4 +57,7 @@ module.exports.run = async (bot, message, args) => {
         } catch (e) {
             return message.channel.send(`**${e.message}**`)
         }
-    }
+}
+module.exports.help = {
+  name:"ban"
+}
