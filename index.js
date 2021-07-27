@@ -7,6 +7,23 @@ const prefix = cfg.prefix;
 const token = cfg.token;
 const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 const { MessageEmbed } = require("discord.js")
+const AntiSpam = require('discord-anti-spam');
+const antiSpam = new AntiSpam({
+	warnThreshold: 6, // Amount of messages sent in a row that will cause a warning.
+	kickThreshold: 13, // Amount of messages sent in a row that will cause a kick.
+	maxInterval: 60000, // Amount of time (in milliseconds) in which messages are considered spam.
+	warnMessage: '{@user}, Please stop spamming!! or do i have to call the ban patrol?', // Message that will be sent in chat upon warning a user.
+	maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
+	ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
+	ignoreBots: true, // Ignore bot messages.
+	verbose: true, // Extended Logs from module.
+	ignoredMembers: [], // Array of User IDs that get ignored.
+	removeMessages: true // If the bot should remove all the spam messages when taking action on a user!
+	// And many more options... See the documentation.
+});
+
+
+
 client.commands = new Discord.Collection();
 
 
@@ -28,6 +45,9 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+
+
+client.on('message', (message) => antiSpam.message(message)); 
 //Playing Message
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.cache.size} servers!`);
