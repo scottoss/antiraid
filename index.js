@@ -93,6 +93,18 @@ client.on("guildMemberAdd", async member => {
 })
 
 
+client.on('message', message => {
+if(message.content === "r!help") {
+let embed = new MessageEmbed()
+.setTitle("Command List")
+.setDescription("r!help, r!ping, r!userinfo")
+.setColor("RANDOM")
+message.channel.send(embed)
+}
+})
+
+
+
 client.login(process.env.TOKEN)
 .catch(err => {
     console.log(`[LOGIN-ERROR] ${err}`);
