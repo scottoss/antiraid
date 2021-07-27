@@ -21,7 +21,7 @@ const antiSpam = new AntiSpam({
 	maxDuplicatesBan: 1200, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesMute: 8000, // Ammount of duplicate message that trigger a mute.
 	ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
-	ignoreBots: true, // Ignore bot messages.
+	ignoreBots: false, // Ignore bot messages.
 	verbose: true, // Extended Logs from module.
 	ignoredMembers: [], // Array of User IDs that get ignored.
 	removeMessages: true // If the bot should remove all the spam messages when taking action on a user!
