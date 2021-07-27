@@ -9,22 +9,24 @@ const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 const { MessageEmbed } = require("discord.js")
 const AntiSpam = require('discord-anti-spam');
 const antiSpam = new AntiSpam({
-	warnThreshold: 6, // Amount of messages sent in a row that will cause a warning.
-	kickThreshold: 1300000000000, // Amount of messages sent in a row that will cause a kick.
-	muteThreshold: 400, // Amount of messages sent in a row that will cause a mute
-	kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
-	banThreshold: 13, // Amount of messages sent in a row that will cause a ban.
+	warnThreshold: 5, // Amount of messages sent in a row that will cause a warning.
+	muteThreshold: 1000000, // Amount of messages sent in a row that will cause a mute
+	kickThreshold: 10, // Amount of messages sent in a row that will cause a kick.
+	banThreshold: 10, // Amount of messages sent in a row that will cause a ban.
 	maxInterval: 60000, // Amount of time (in milliseconds) in which messages are considered spam.
-	warnMessage: '{@user}, Please stop spamming!! or do i have to call the kick patrol?', // Message that will be sent in chat upon warning a user.
-	maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesKick: 100, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesBan: 10, // Amount of duplicate messages that trigger a warning.
+	warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
+	kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
+	muteMessage: '**{user_tag}** has been muted for spamming.',// Message that will be sent in chat upon muting a user.
 	banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
-	maxDuplicatesMute: 8000, // Ammount of duplicate message that trigger a mute.
+	maxDuplicatesWarning: 5, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesBan: 10, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesMute: 8000000000000000, // Ammount of duplicate message that trigger a mute.
 	ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
-	ignoreBots: false, // Ignore bot messages.
+	ignoreBots: true, // Ignore bot messages.
 	verbose: true, // Extended Logs from module.
 	ignoredMembers: [], // Array of User IDs that get ignored.
+	muteRoleName: "Muted", // Name of the role that will be given to muted users!
 	removeMessages: true // If the bot should remove all the spam messages when taking action on a user!
 	// And many more options... See the documentation.
 });
