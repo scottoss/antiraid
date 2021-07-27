@@ -4,7 +4,7 @@ const cfg = require("./cfg.json");
 const prefix = cfg.prefix;
 const token = cfg.token;
 const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
-
+client.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
