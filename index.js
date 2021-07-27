@@ -6,9 +6,48 @@ const token = cfg.token;
 const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 
 
-client.on("ready", () =>{
-    console.log(`\nJSplitter session created successfully\n   bot: ${client.user.tag}\n   prefix: "${prefix}"`);
-})
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    client.commands.set(props.help.name, props);
+  });
+
+});
+
+//Playing Message
+client.on("ready", async () => {
+  console.log(`${client.user.username} is online on ${client.guilds.cache.size} servers!`);
+
+  client.user.setActivity('over unverified bots!!', {type: "WATCHING"});
+});
+
+//Command Manager
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let prefix = config.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  
+  //Check for prefix
+  if(!cmd.startsWith(config.prefix)) return;
+  
+  let commandfile = client.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(client,message,args);
+
+});
 
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) {
