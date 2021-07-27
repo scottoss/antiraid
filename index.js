@@ -14,7 +14,7 @@ const antiSpam = new AntiSpam({
 	kickThreshold: 10000, // Amount of messages sent in a row that will cause a kick.
 	banThreshold: 10, // Amount of messages sent in a row that will cause a ban.
 	maxInterval: 60000, // Amount of time (in milliseconds) in which messages are considered spam.
-	warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
+	warnMessage: '{@user}, Please stop spamming, or i will take action!!!!', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
 	muteMessage: '**{user_tag}** has been muted for spamming.',// Message that will be sent in chat upon muting a user.
 	banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
@@ -27,7 +27,7 @@ const antiSpam = new AntiSpam({
 	verbose: true, // Extended Logs from module.
 	ignoredMembers: [], // Array of User IDs that get ignored.
 	muteRoleName: "Muted", // Name of the role that will be given to muted users!
-	removeMessages: true // If the bot should remove all the spam messages when taking action on a user!
+	removeMessages: false // If the bot should remove all the spam messages when taking action on a user!
 	// And many more options... See the documentation.
 });
 
