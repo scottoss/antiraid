@@ -52,7 +52,7 @@ client.on('message', (message) => antiSpam.message(message));
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.cache.size} servers!`);
 
-  client.user.setActivity('over unverified bots!! | r!help', {type: "WATCHING"});
+  client.user.setActivity('over server security | r!help', {type: "WATCHING"});
 });
 
 //Command Manager
