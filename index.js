@@ -12,7 +12,7 @@ const antiSpam = new AntiSpam({
 	warnThreshold: 5, // Amount of messages sent in a row that will cause a warning.
 	muteThreshold: 1000000, // Amount of messages sent in a row that will cause a mute
 	kickThreshold: 10000, // Amount of messages sent in a row that will cause a kick.
-	banThreshold: 10, // Amount of messages sent in a row that will cause a ban.
+	banThreshold: 15, // Amount of messages sent in a row that will cause a ban.
 	maxInterval: 60000, // Amount of time (in milliseconds) in which messages are considered spam.
 	warnMessage: '{@user}, Please stop spamming, or i will take action!!!!', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
