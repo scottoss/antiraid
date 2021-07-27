@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const discord = require("discord.js");
 const fs = require('fs');
+const config = require("./cfg.json");
 const cfg = require("./cfg.json");
 const prefix = cfg.prefix;
 const token = cfg.token;
