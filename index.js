@@ -18,7 +18,7 @@ const antiSpam = new AntiSpam({
 	warnMessage: '{@user}, Please stop spamming!! or do i have to call the kick patrol?', // Message that will be sent in chat upon warning a user.
 	maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesKick: 100, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesBan: 1200, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesBan: 10, // Amount of duplicate messages that trigger a warning.
 	banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
 	maxDuplicatesMute: 8000, // Ammount of duplicate message that trigger a mute.
 	ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
