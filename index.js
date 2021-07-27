@@ -11,9 +11,15 @@ const AntiSpam = require('discord-anti-spam');
 const antiSpam = new AntiSpam({
 	warnThreshold: 6, // Amount of messages sent in a row that will cause a warning.
 	kickThreshold: 13, // Amount of messages sent in a row that will cause a kick.
+	muteThreshold: 400, // Amount of messages sent in a row that will cause a mute
+	kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
+	banThreshold: 70000, // Amount of messages sent in a row that will cause a ban.
 	maxInterval: 60000, // Amount of time (in milliseconds) in which messages are considered spam.
-	warnMessage: '{@user}, Please stop spamming!! or do i have to call the ban patrol?', // Message that will be sent in chat upon warning a user.
+	warnMessage: '{@user}, Please stop spamming!! or do i have to call the kick patrol?', // Message that will be sent in chat upon warning a user.
 	maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesKick: 100, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesBan: 1200, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesMute: 8000, // Ammount of duplicate message that trigger a mute.
 	ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
 	ignoreBots: true, // Ignore bot messages.
 	verbose: true, // Extended Logs from module.
