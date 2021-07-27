@@ -9,7 +9,7 @@ const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 const { MessageEmbed } = require("discord.js")
 const AntiSpam = require('discord-anti-spam');
 const antiSpam = new AntiSpam({
-	warnThreshold: 5, // Amount of messages sent in a row that will cause a warning.
+	warnThreshold: 8, // Amount of messages sent in a row that will cause a warning.
 	muteThreshold: 1000000, // Amount of messages sent in a row that will cause a mute
 	kickThreshold: 10000, // Amount of messages sent in a row that will cause a kick.
 	banThreshold: 15, // Amount of messages sent in a row that will cause a ban.
