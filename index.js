@@ -72,7 +72,7 @@ client.on("ready", async () => {
 
 client.on("guildMemberAdd", (member) => {
 
-  if (blacklisted.includes(member.id)) {
+  if (blacklist.includes(member.id)) {
 
     member.ban
 
