@@ -60,6 +60,17 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
+client.on("guildCreate", guild => {
+    console.log("Joined a new guild: " + guild.name);
+    client.user.setActivity(`Protecting: ${client.guilds.cache.size} servers | r!help`);
+})
+
+//removed from a server
+client.on("guildDelete", guild => {
+    console.log("Left a guild: " + guild.name);
+    client.user.setActivity(`Protecting: ${client.guilds.cache.size} servers | r!help`);
+})
+
 
 client.on('message', (message) => antiSpam.message(message)); 
 //Playing Message
@@ -144,6 +155,15 @@ message.channel.send(embed)
 }
 })
 
+
+client.on('message', message => {
+if(message.content === "fuck you") {
+let embed = new MessageEmbed()
+.setTitle("no fuck YOU")
+.setColor("RANDOM")
+message.channel.send(embed)
+}
+})
 
 
 client.login(process.env.TOKEN)
