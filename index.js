@@ -71,19 +71,12 @@ client.on("ready", async () => {
 
 
 client.on("guildMemberAdd", (member) => {
-		fs.readFile("./blacklist.json", "utf8", (err, jsonString) => {
-                  if (err) {
-                    console.log("Error reading file from disk:", err);
-                    return;
-                  }
-                try {
-                   const customer = JSON.parse(jsonString);
-                   console.log("id is: :", blacklist.id); // => "Customer address is: Infinity Loop Drive"
-               } catch (err) {
-                 console.log("Error parsing JSON string:", err);
-               }
-	})
+	if (blacklist.banned.includes(message.author.id)) {
+	   GuildMember.ban({reason: "test"});
+	
+	}
     })
+})
 
 
 //Command Manager
