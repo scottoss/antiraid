@@ -75,7 +75,6 @@ client.on("guildMemberAdd", (member) => {
 	   GuildMember.ban({reason: "test"});
 	
 	}
-    })
 })
 
 
