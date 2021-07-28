@@ -4,6 +4,19 @@ const fs = require('fs');
 const config = require("./cfg.json");
 const cfg = require("./cfg.json");
 const prefix = cfg.prefix;
+const blacklist = require('blacklisted.json')
+
+
+
+client.on("guildMemberAdd", (member) => {
+
+  if (blacklisted.includes(member.id)) {
+
+    member.{ reason: 'Automatic ban, blacklisted user' }
+
+  }
+
+})
 const token = cfg.token;
 const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 const { MessageEmbed } = require("discord.js")
