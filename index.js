@@ -71,7 +71,7 @@ client.on("ready", async () => {
 
 
 client.on("guildMemberAdd", (member) => {
-    if (blacklist.banned.includes(message.author.id)) { guildMember.ban() }
+    if (blacklist.banned.includes(guildMember.author.id)) { guildMember.ban() }
 });
 
 //Command Manager
