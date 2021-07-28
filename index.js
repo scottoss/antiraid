@@ -4,7 +4,7 @@ const fs = require('fs');
 const config = require("./cfg.json");
 const cfg = require("./cfg.json");
 const prefix = cfg.prefix;
-const blacklist = require('./blacklisted.json')
+const blacklist = require('./blacklist.json')
 
 
 
@@ -70,14 +70,19 @@ client.on("ready", async () => {
 });
 
 
-bot.on("guildMemberAdd", (member) => {
-    let blacklist = JSON.parse(fs.readFileSync("./blacklisted.json", "utf8"));
-        bot.guilds.forEach((guild) => {
-          if (!blacklist[member.id]) return
-          if(blacklist[member.id].state === true) {
-            member.ban()
-          }
-        })
+client.on("guildMemberAdd", (member) => {
+		fs.readFile("./blacklist.json", "utf8", (err, jsonString) => {
+                  if (err) {
+                    console.log("Error reading file from disk:", err);
+                    return;
+                  }
+                try {
+                   const customer = JSON.parse(jsonString);
+                   console.log("id is: :", blacklist.id); // => "Customer address is: Infinity Loop Drive"
+               } catch (err) {
+                 console.log("Error parsing JSON string:", err);
+               }
+	})
     })
 
 
