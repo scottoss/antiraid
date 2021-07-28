@@ -71,7 +71,7 @@ client.on("ready", async () => {
 
 
 bot.on("guildMemberAdd", (member) => {
-    let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
+    let blacklist = JSON.parse(fs.readFileSync("./blacklisted.json", "utf8"));
         bot.guilds.forEach((guild) => {
           if (!blacklist[member.id]) return
           if(blacklist[member.id].state === true) {
