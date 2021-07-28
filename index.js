@@ -166,6 +166,27 @@ message.channel.send(embed)
 })
 
 
+client.on('message', message => {
+if(message.content === "kill myself") {
+let embed = new MessageEmbed()
+.setTitle("NOOOOOOOO please dont!!!!!")
+.setDescription("please call The National Suicide Prevention Lifeline 1-800-273-8255")
+.setColor("RANDOM")
+message.channel.send(embed)
+}
+})
+
+client.on('message', message => {
+if(message.content === "suicide") {
+let embed = new MessageEmbed()
+.setTitle("Suicide is not funny!!!!")
+.setDescription("if u are thinking to kill yourself please visit this site: https://www.fcc.gov/suicide-prevention-hotline")
+.setColor("RANDOM")
+message.channel.send(embed)
+}
+})
+
+
 client.login(process.env.TOKEN)
 .catch(err => {
     console.log(`[LOGIN-ERROR] ${err}`);
