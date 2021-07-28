@@ -12,7 +12,7 @@ client.on("guildMemberAdd", (member) => {
 
   if (blacklisted.includes(member.id)) {
 
-    member.ban{reason: 'Automatic ban, blacklisted user'} 
+    member.ban
 
   }
 
