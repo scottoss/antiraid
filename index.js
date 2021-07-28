@@ -8,15 +8,7 @@ const blacklist = require('./blacklisted.json')
 
 
 
-client.on("guildMemberAdd", (member) => {
 
-  if (blacklisted.includes(member.id)) {
-
-    member.ban
-
-  }
-
-})
 const token = cfg.token;
 const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 const { MessageEmbed } = require("discord.js")
@@ -76,6 +68,18 @@ client.on("ready", async () => {
 
   client.user.setActivity(`Protecting: ${client.guilds.cache.size} servers | r!help`);
 });
+
+
+client.on("guildMemberAdd", (member) => {
+
+  if (blacklisted.includes(member.id)) {
+
+    member.ban
+
+  }
+
+})
+
 
 //Command Manager
 client.on("message", async message => {
