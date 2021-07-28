@@ -74,8 +74,8 @@ client.on("guildMemberAdd", (member) => {
 	if (blacklist.banned.includes(message.author.id)) {
 	   GuildMember.ban({reason: "test"});
 	
-	}
-})
+	   }
+});
 
 
 //Command Manager
