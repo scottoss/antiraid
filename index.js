@@ -4,7 +4,7 @@ const fs = require('fs');
 const config = require("./cfg.json");
 const cfg = require("./cfg.json");
 const prefix = cfg.prefix;
-const blacklist = require('blacklisted.json')
+const blacklist = require('./blacklisted.json')
 
 
 
