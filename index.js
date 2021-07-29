@@ -150,6 +150,7 @@ if(message.content === "r!help") {
 let embed = new MessageEmbed()
 .setTitle("Command List")
 .setDescription("r!help, r!ping, r!userinfo. r!lockdown on/off, r!ban, r!report")
+.setDescription("please call The National Suicide Prevention Lifeline 1-800-273-8255")
 .setColor("RANDOM")
 message.channel.send(embed)
 }
