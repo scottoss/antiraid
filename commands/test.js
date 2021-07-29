@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const premium = require('./../premium.json')
+const client = new discord.Client({ ws: { intents: discord.Intents.ALL } });
 
 
 
