@@ -85,8 +85,8 @@ module.exports.run = async (bot, message, args) => {
             
         message.channel.send({embed});
     
-    }
-  } else if (premium.users.includes(message.author.id)) {
+      }
+    } else if (premium.users.includes(message.author.id)) {
         var permissions = [];
         var acknowledgements = 'None';
         let whoisPermErr = new Discord.MessageEmbed()
@@ -162,11 +162,11 @@ module.exports.run = async (bot, message, args) => {
             
         message.channel.send({embed});
     
+      }
+    } else {
+        message.channel.send('u need premium to run this command!!!');
     }
-  } else {
-      message.channel.send('u need premium to run this command!!!');
   }
-}
 
 
 module.exports.help = {
