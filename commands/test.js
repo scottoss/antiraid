@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
                } else if (premium.users.includes(message.author.id)) {
                  message.channel.send('user has premium'); 
                } else {
-                 message.channel.send('u need premium');
+                 message.channel.send('u need premium to run this command!!!');
                }
              }
   
