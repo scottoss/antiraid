@@ -2,9 +2,10 @@ const Discord = require("discord.js");
 const premium = require('./../premium.json')
 
 
-server = message.guild.id,
-user = message.user.id
+
 module.exports.run = async (bot, message, args) => {
+               server = message.guild.id,
+               user = message.user.id
                if (premium.guilds.includes(server)) {
                  message.channel.send('pong');
                } else if (premium.users.includes(user)) {
