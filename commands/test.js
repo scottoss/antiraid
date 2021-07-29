@@ -7,9 +7,17 @@ code = {
 
 
 module.exports.run = async (bot, message, args) => {
-               message.channel.send('pong');
-}
+               if (premium.guilds.includes(guild.id)) {code}
+        
+               else {
+                 if (premium.users.includes(user.id)) {code}
+                 else {
+                   message.channel.send('u need premium');
+                 }
+               }
+  
+  
 
 module.exports.help = {
-  name:"ping"
+  name:"test"
 }
