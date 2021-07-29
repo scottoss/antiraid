@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const moment = require('moment');
+const premium = require('./../premium.json')
 
 const status = {
     online: "Online",
