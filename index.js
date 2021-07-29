@@ -149,7 +149,7 @@ client.on('message', message => {
 if(message.content === "r!help") {
 let embed = new MessageEmbed()
 .setTitle("Command List")
-.setDescription("r!help, r!ping, r!userinfo. r!lockdown on/off, r!ban")
+.setDescription("r!help, r!ping, r!userinfo. r!lockdown on/off, r!ban, r!report")
 .setColor("RANDOM")
 message.channel.send(embed)
 }
