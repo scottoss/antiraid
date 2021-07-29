@@ -4,7 +4,7 @@ const premium = require('./../premium.json')
 
 
 
-module.exports.run = async (bot, message, guild, args) => {
+module.exports.run = async (bot, message, guild, user, args) => {
                if (premium.guilds.includes(guild.id)) {
                  message.channel.send('pong');
                } else if (premium.users.includes(user.id)) {
