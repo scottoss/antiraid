@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const premium = require('./../premium.json')
 
 code = {
-  
+  message.channel.send('pong');
 }
 
 
