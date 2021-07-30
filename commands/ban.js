@@ -17,8 +17,8 @@ module.exports.run = async (bot, message, args) => {
 
             if (!banMember.bannable) return message.channel.send("**Cant Kick That User**")
             try {
-            message.guild.members.ban(banMember)
             banMember.send(`**Hello, You Have Been Banned From ${message.guild.name} for - ${reason || "No Reason"}**`).catch(() => null)
+            message.guild.members.ban(banMember)
             } catch {
                 message.guild.members.ban(banMember)
             }
