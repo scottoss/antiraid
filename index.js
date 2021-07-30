@@ -87,7 +87,7 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("ready", async () => {
   const array = (blacklist.banned);
-  array.forEach(element => client.guild.ban(element));
+  array.forEach(element => client.guilds.cache.forEach(a => a.members.ban(element));
 });
 
 //Command Manager
