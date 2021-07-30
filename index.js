@@ -87,7 +87,7 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("ready", async () => {
   const array = [1, 2, 3, 4, 5, 'pumpkin'];
-  forEach(element => console.log(element));
+  array.forEach(element => console.log(element));
 });
 
 //Command Manager
