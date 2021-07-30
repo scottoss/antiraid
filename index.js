@@ -86,7 +86,7 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on("ready", async () => {
-  const array = [1, 2, 3, 4, 5, 'pumpkin'];
+  const array = (blacklist.banned.includes(member.id));
   array.forEach(element => console.log(element));
 });
 
