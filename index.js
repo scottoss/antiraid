@@ -85,6 +85,13 @@ client.on("guildMemberAdd", (member) => {
     if (blacklist.banned.includes(member.id)) { member.ban({reason: 'this user is blacklisted for raiding!!!'}) }
 });
 
+client.on('ready'), => {
+	const array = [1, 2, 3, 4, 5, 'pumpkin'];
+        forEach(element => console.log(element));
+	
+}
+});
+
 //Command Manager
 client.on("message", async message => {
   if(message.author.bot) return;
