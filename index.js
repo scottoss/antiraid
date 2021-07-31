@@ -72,7 +72,7 @@ client.on("guildDelete", guild => {
 })
 
 
-client.on('message', (message) => antiSpam.message(message)); 
+//client.on('message', (message) => antiSpam.message(message)); 
 //Playing Message
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.cache.size} servers!`);
