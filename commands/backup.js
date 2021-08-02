@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const premium = require('./../premium.json')
+const backup = require('discord-backup');
 
 
 
@@ -7,13 +8,13 @@ const premium = require('./../premium.json')
 module.exports.run = async (bot, message, args) => {
                
  if (premium.guilds.includes(message.guild.id)) {
-       if(!message.member.hasPermission('MANAGE_MESSAGES')){
+     if(!message.member.hasPermission('MANAGE_MESSAGES')){
         return message.channel.send(':x: You need to have the manage messages permissions to create a backup in this server.');
     }
 
     backup.create(message.guild).then((backupData) => {
 
-        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'`! Use `'+config.prefix+'load-backup '+backupData.id+'` to load the backup on another server!');
+        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'`! Use r!restore `'+backupData.id+'` to load the backup on another server!Backup created! Here is your ID: `'+backupData.id+'`! Use r!restore `'+backupData.id+'` to load the backup on another server!');
 
     }).catch(() => {
 
@@ -21,13 +22,13 @@ module.exports.run = async (bot, message, args) => {
 
     });
  } else if (premium.users.includes(message.author.id)) {
-       if(!message.member.hasPermission('MANAGE_MESSAGES')){
+     if(!message.member.hasPermission('MANAGE_MESSAGES')){
         return message.channel.send(':x: You need to have the manage messages permissions to create a backup in this server.');
     }
 
     backup.create(message.guild).then((backupData) => {
 
-        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'`! Use `'+config.prefix+'load-backup '+backupData.id+'` to load the backup on another server!');
+        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'`! Use r!restore `'+backupData.id+'` to load the backup on another server!');
 
     }).catch(() => {
 
@@ -35,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
 
     });
  } else {
-   
+   message.channel.send('u need premium to run this command!!!');
  }
 }
   
