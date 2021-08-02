@@ -53,8 +53,6 @@ module.exports.run = async (bot, message, args) => {
     }).catch(() => {
         return message.channel.send(':x: No backup found for ID '+backupID+'!');
     });
-
-};
  } else if (premium.users.includes(message.author.id)) {
     if(!message.member.hasPermission('ADMINISTRATOR')){
         return message.channel.send(':x: You need to have the manage messages permissions to create a backup in this server.');
@@ -101,8 +99,6 @@ module.exports.run = async (bot, message, args) => {
     }).catch(() => {
         return message.channel.send(':x: No backup found for ID '+backupID+'!');
     });
-
-};
  } else {
    message.channel.send('u need premium to run this command!!!');
  }
