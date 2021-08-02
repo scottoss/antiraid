@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 
     backup.create(message.guild).then((backupData) => {
 
-        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'`! Use r!restore `'+backupData.id+'` to load the backup on another server!Backup created! Here is your ID: `'+backupData.id+'`! Use r!restore `'+backupData.id+'` to load the backup on another server!');
+        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'`! Use r!restore `'+backupData.id+'` to load the backup on another server!');
 
     }).catch(() => {
 
